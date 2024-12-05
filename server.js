@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const clientSessions = require('client-sessions');
-
+app.use(express.static(path.join(__dirname, 'public')));
 const HTTP_PORT = process.env.HTTP_PORT || 4000;
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: false }));
