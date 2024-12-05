@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const clientSessions = require('client-sessions');
 
-const HTTP_POST = process.env.HTTP_POST || 4000;
+const HTTP_PORT = process.env.HTTP_PORT || 4000;
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
@@ -66,7 +66,7 @@ app.get('/logout', (req, res) => {
     req.session.reset();
     res.redirect('/login');
 });
-app.listen(HTTP_POST,()=> {
-  console.log(`Server is running on ${HTTP_POST}`);
+app.listen(HTTP_PORT,()=> {
+  console.log(`Server is running on ${HTTP_PORT}`);
 });
 module.exports = app;
